@@ -1,14 +1,12 @@
 The content below is an example project proposal / requirements document. Replace the text below the lines marked "__TODO__" with details specific to your project. Remove the "TODO" lines.
 
-(___TODO__: your project name_)
-
-# Shoppy Shoperson 
+# Day Planner
 
 ## Overview
 
-(___TODO__: a brief one or two paragraph, high-level description of your project_)
+When massive amounts of work and pressure piles up on us, it can be hard to stay motivated. When faced with a neverending list of things-to-do, sometimes we may spend the day doing none of it at all! This is where TITLE can help, by transforming your day into a steady and *rewarding* one using the power of short-term motivation.
 
-Remembering what to buy at the grocery store is waaaaay too difficult. Also, shopping for groceries when you're hungry leads to regrettable purchases. Sooo... that's where Shoppy Shoperson comes in!
+
 
 Shoppy Shoperson is a web app that will allow users to keep track of multiple grocery lists. Users can register and login. Once they're logged in, they can create or view their grocery list. For every list that they have, they can add items to the list or cross off items.
 
@@ -90,18 +88,13 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 
 (___TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed_)
 
-* (5 points) Integrate user authentication
-    * I'm going to be using passport for user authentication
-    * And account has been made for testing; I'll email you the password
-    * see <code>cs.nyu.edu/~jversoza/ait-final/register</code> for register page
-    * see <code>cs.nyu.edu/~jversoza/ait-final/login</code> for login page
-* (4 points) Perform client side form validation using a JavaScript library
-    * see <code>cs.nyu.edu/~jversoza/ait-final/my-form</code>
-    * if you put in a number that's greater than 5, an error message will appear in the dom
-* (5 points) vue.js
-    * used vue.js as the frontend framework; it's a challenging library to learn, so I've assigned it 5 points
+* (5 points) Integrate user authentication - Passport
+    * Passport is
+* (2 points) Use a CSS framework throughout your site, use a reasonable of customization of the framework - Bootstrap
+* (2 points) chartist.js
+    * I'm going to use chartist.js to create a pie chart
 
-10 points total out of 8 required points (___TODO__: addtional points will __not__ count for extra credit_)
+9 points total out of 8 required points 
 
 
 ## [Link to Initial Main Project File](app.js) 
@@ -114,3 +107,4 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 
 1. [passport.js authentication docs](http://passportjs.org/docs) - (add link to source code that was based on this)
 2. [tutorial on vue.js](https://vuejs.org/v2/guide/) - (add link to source code that was based on this)
+
