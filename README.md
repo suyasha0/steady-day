@@ -60,13 +60,13 @@ An Example Task:
 
 ![ss](documentation/register.png)
 
-/setplan - page for adding tasks 
+/plan - page for adding tasks 
 
 ![ss](documentation/plan.png)
 
-/plan - page for displaying and checking off tasks
+/today - page for displaying and checking off tasks
 
-![ss](documentation/today.png)
+![ss](documentation/setplan.png)
 
 /overview - page for showing overviw of day (tasks done etc.)
 
