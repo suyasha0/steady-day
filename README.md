@@ -1,5 +1,3 @@
-The content below is an example project proposal / requirements document. Replace the text below the lines marked "__TODO__" with details specific to your project. Remove the "TODO" lines.
-
 # Steady Day
 
 ## Overview
@@ -16,8 +14,7 @@ The application will store Users, FbUsers, and Tasks.
 * User will be used when logging in normally
 * FbUser will be used when logging in through Facebook
 * Each User/FbUser can have multiple Tasks
-
-(___TODO__: sample documents_)
+* Task represents a task the user plans to accomplish at a specific time interval 
 
 An Example User:
 
@@ -53,23 +50,27 @@ An Example Task:
 
 ## [Link to Commented First Draft Schema](db.js) 
 
-(___TODO__: create a first draft of your Schemas in db.js and link to it_)
-
 ## Wireframes
 
-(___TODO__: wireframes for all of the pages on your site; they can be as simple as photos of drawings or you can use a tool like Balsamiq, Omnigraffle, etc._)
+/ - page for logging in
 
-/list/create - page for creating a new shopping list
+![ss](documentation/login.png)
 
-![list create](documentation/list-create.png)
+/register - page for registering
 
-/list - page for showing all shopping lists
+![ss](documentation/register.png)
 
-![list](documentation/list.png)
+/setplan - page for adding tasks 
 
-/list/slug - page for showing specific shopping list
+![ss](documentation/plan.png)
 
-![list](documentation/list-slug.png)
+/plan - page for displaying and checking off tasks
+
+![ss](documentation/today.png)
+
+/overview - page for showing overviw of day (tasks done etc.)
+
+![ss](documentation/overview.png)
 
 ## Site map
 
