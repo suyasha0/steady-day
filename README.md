@@ -54,47 +54,44 @@ An Example Task:
 
 / - page for logging in
 
-![ss](documentation/login.png)
+![login](documentation/login.png)
 
 /register - page for registering
 
-![ss](documentation/register.png)
+![register](documentation/register.png)
 
 /plan - page for adding tasks 
 
-![ss](documentation/setplan.png)
+![plan](documentation/setplan.png)
 
 /today - page for displaying and checking off tasks
 
-![ss](documentation/plan.png)
+![today](documentation/plan.png)
 
 /overview - page for showing overview of day (tasks done etc.)
 
-![ss](documentation/overview.png)
+![overview](documentation/overview.png)
 
 ## Site map
 
-(___TODO__: draw out a site map that shows how pages are related to each other_)
-
-Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia/commons/2/20/Sitemap_google.jpg), but you can create one without the screenshots, drop shadows, etc. ... just names of pages and where they flow to.
+Here's a [sitemap](documentation/sitemap.png)
 
 ## User Stories or Use Cases
 
 (___TODO__: write out how your application will be used through [user stories](http://en.wikipedia.org/wiki/User_story#Format) and / or [use cases](https://www.mongodb.com/download-center?jmp=docs&_ga=1.47552679.1838903181.1489282706#previous)_)
 
-1. as non-registered user, I can register a new account with the site
-2. as a user, I can log in to the site
-3. as a user, I can create a new grocery list
-4. as a user, I can view all of the grocery lists I've created in a single list
-5. as a user, I can add items to an existing grocery list
-6. as a user, I can cross off items in an existing grocery list
+1. as a non-registered user, I can register a new account with the site
+2. as a non-registered user, I can sign in with Facebook and become a user
+3. as a user, I can log in to the site
+4. as a user, I can add tasks and set their start and end times
+5. as a user, I can set rewards for each task
+6. as a user, I can check off items on my task list
+7. as a user, I can reset my task list for a new day
 
 ## Research Topics
 
-(___TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed_)
-
 * (5 + 1 points) Integrate user authentication - Passport
-    * Passport is
+    * Passport is an authentication middleware. It has different authentication mechanisms, known as strategies, that can be used.
     * (+1)I'm going to use implement signup and registration as well as FB Connect 
 * (2 points) chartist.js
     * I'm going to use chartist.js to create a pie chart
@@ -104,11 +101,7 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 
 ## [Link to Initial Main Project File](app.js) 
 
-(___TODO__: create a skeleton Express application with a package.json, app.js, views folder, etc. ... and link to your initial app.js_)
-
 ## Annotations / References Used
-
-(___TODO__: list any tutorials/references/etc. that you've based your code off of_)
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 1. [passport.js authentication docs](http://passportjs.org/docs) - (add link to source code that was based on this)
 2. [tutorial on vue.js](https://vuejs.org/v2/guide/) - (add link to source code that was based on this)
