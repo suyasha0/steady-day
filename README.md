@@ -68,7 +68,7 @@ An Example Task:
 
 ![ss](documentation/plan.png)
 
-/overview - page for showing overviw of day (tasks done etc.)
+/overview - page for showing overview of day (tasks done etc.)
 
 ![ss](documentation/overview.png)
 
