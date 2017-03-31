@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "body-parser": "^1.17.1",
+    "chartist": "^0.10.1",
     "express": "^4.15.2",
     "express-session": "^1.15.2",
     "nodemon": "^1.11.0",
