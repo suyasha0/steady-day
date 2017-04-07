@@ -25,11 +25,12 @@ const sessionOptions = {
 
 app.use(session(sessionOptions));
 
-/*
-app.get('/', (req, res) => {
 
+app.get('/', (req, res) => {
+	res.render('index');
 });
 
+/*
 app.get('/register', (req, res) => {
 	
 });
