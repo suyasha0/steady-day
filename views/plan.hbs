@@ -1,0 +1,14 @@
+<ul>
+{{#each task}}
+	<li>
+	<b>{{this.info}}</b>
+	Reward: {{this.reward}}
+	</li>
+{{/each}}
+</ul>
+
+<form method="POST" action="/plan">
+  	Info: <input type="text" name="info"> 
+  	Reward: <input type="text" name="reward"> 
+    <input type="submit" name="Add Task">
+</form>

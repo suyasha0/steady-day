@@ -2,10 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 
-//require('./db');
+require('./db');
 
 const mongoose = require('mongoose');
-//const User = mongoose.model('User');
+const Task = mongoose.model('Task');
 
 const app = express();
 
@@ -25,4 +25,35 @@ const sessionOptions = {
 
 app.use(session(sessionOptions));
 
-app.listen(3000);
+/*
+app.get('/', (req, res) => {
+
+});
+
+app.get('/register', (req, res) => {
+	
+});
+*/
+
+app.get('/plan', (req, res) => {
+	Task.find(function(err, task, count){    //later i will change to for each USER
+		res.render('plan', {task: task});
+	});
+});
+
+app.post('/plan', (req, res) => {
+	const task = new Task({
+		info: req.body.info,
+		reward: req.body.reward
+	}).save(function(err, task, count){
+		if(err){
+			console.log("err");
+			res.send("An error occurred.")
+		}
+		else{
+			res.redirect('/plan');
+		}
+	})
+});
+
+app.listen(process.env.PORT || 3000);
