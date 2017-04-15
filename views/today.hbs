@@ -1,0 +1,16 @@
+<br><h1>Today</h1></br>
+
+<br>
+<ul>
+{{#each task}}
+	<li>
+	<b>{{this.info}}</b>
+	Reward: {{this.reward}}
+	</li>
+{{/each}}
+</ul>
+
+<form method="POST" action="/today">
+    <input type="submit" value="✓">
+</form>
+</br>

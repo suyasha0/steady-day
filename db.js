@@ -5,7 +5,8 @@ const TaskSchema = new mongoose.Schema({
 	info: String,		//what the task is
 	timeStart: String,	//when the user plans to start it
 	timeEnd: String,	//when the user plans to end it
-	reward: String		//wha the user plans to treat self with
+	reward: String,		//what the user plans to treat self with
+	done: {type: Number, default: -1}      	//1 for done, -1 for not done
 });
 
 //used for regular logins

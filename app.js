@@ -5,8 +5,8 @@ const session = require('express-session');
 require('./db');
 
 const mongoose = require('mongoose');
-const passport = require('passport')
-  , LocalStrategy = require('passport-local').Strategy;
+const passport = require('passport'),
+	LocalStrategy = require('passport-local').Strategy;
 const Task = mongoose.model('Task');
 const User = mongoose.model('User');
 
@@ -89,7 +89,17 @@ app.post('/plan', (req, res) => {
 		else{
 			res.redirect('/plan');
 		}
-	})
+	});
+});
+
+app.get('/today', (req, res) => {
+	Task.find(function(err, task, count){    //later i will change to for each USER
+		res.render('today', {task: task});
+	});
+});
+
+app.post('/today', (req, res) => {
+	res.redirect('/plan');
 });
 
 app.listen(process.env.PORT || 3000);

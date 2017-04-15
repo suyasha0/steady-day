@@ -1,3 +1,6 @@
+<br><h1>Plan</h1>
+
+<br>
 <ul>
 {{#each task}}
 	<li>
@@ -7,8 +10,20 @@
 {{/each}}
 </ul>
 
+<script src="javascripts/reward.js"></script>
+
+
 <form method="POST" action="/plan">
   	Info: <input type="text" name="info"> 
-  	Reward: <input type="text" name="reward"> 
+  	Reward: 
+  	<select id="first-choice">
+	 <option selected value="base">none</option>
+	 <option value="starbucks">Starbucks</option>
+  	 <option value="tea">Tea</option>
+	</select>
     <input type="submit" value="Add Task">
 </form>
+
+
+<button class="add" type="reward">Other</button>
+</br>
