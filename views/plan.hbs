@@ -1,29 +1,28 @@
 <br><h1>Plan</h1>
 
 <br>
-<ul>
+
 {{#each task}}
-	<li>
+	<br>
 	<b>{{this.info}}</b>
 	Reward: {{this.reward}}
-	</li>
+	</br>
 {{/each}}
-</ul>
 
 <script src="javascripts/reward.js"></script>
 
-
+<br>
 <form method="POST" action="/plan">
   	Info: <input type="text" name="info"> 
   	Reward: 
-  	<select id="first-choice">
-	 <option selected value="base">none</option>
+  	<select id="reward" name="reward">
+	 <option selected value="-">none</option>
 	 <option value="starbucks">Starbucks</option>
   	 <option value="tea">Tea</option>
 	</select>
     <input type="submit" value="Add Task">
 </form>
-
+</br>
 
 <button class="add" type="reward">Other</button>
 </br>

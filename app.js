@@ -93,13 +93,23 @@ app.post('/plan', (req, res) => {
 });
 
 app.get('/today', (req, res) => {
-	Task.find(function(err, task, count){    //later i will change to for each USER
+	Task.find({done: -1}, function(err, task, count){ //later i will change to for each USER
 		res.render('today', {task: task});
 	});
 });
 
 app.post('/today', (req, res) => {
-	res.redirect('/plan');
+	Task.findOne({ info: req.body.info }, function(err, task, count){
+		task.update({done: 1}, function(saveErr, saveLink, saveCount){
+			if(saveErr){
+				console.log(saveErr);
+			}
+			else{
+				res.redirect('/today');
+			}
+		});
+	});
+
 });
 
 app.listen(process.env.PORT || 3000);
