@@ -112,4 +112,10 @@ app.post('/today', (req, res) => {
 
 });
 
+app.get('/overview', (req, res) => {
+	res.render('overview');
+});
+
+
+
 app.listen(process.env.PORT || 3000);
