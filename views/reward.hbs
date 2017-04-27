@@ -1,0 +1,30 @@
+<form action="" method="get">
+	<input type="text" id="reward" name="reward" value="{{reward}}">	
+	<input id="filterBtn" type="submit" value="Filter">
+</form>
+
+
+<table class="table table-sm">
+   <thead>
+   <tr>
+	  <th><i>Rewards</i></th>
+   </tr>
+   </thead>
+  <tbody id="reward-list">
+  	{{#each rewards}}
+		<tr>
+			<td>{{this.info}}</td> 
+		</tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<br>
+<form id="create-form" method="POST" action="/reward">
+	<label for="rewardTitle"></label>
+	<input type="text" name="rewardTitle" id="rewardTitle">
+	<input type="submit" name="addBtn" id="addBtn" value="Add Reward">
+</form>
+</br>
+
+<script src="js/reward.js"></script>

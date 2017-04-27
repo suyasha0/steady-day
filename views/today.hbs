@@ -1,13 +1,31 @@
 <br><h1>Today</h1></br>
 
 
-{{#each task}}
 	<br>
-	<b>{{this.info}}</b>
-	Reward: {{this.reward}}
 
-<form method="POST" action="/today">
-	<input type="hidden" name="info" value={{this.info}}>
-    <input type="submit" value="✓">
-</form></br>
-{{/each}}
+<table class="table table-striped">
+   <thead>
+   <tr>
+	  <th></th>
+	  <th><i>Reward</i></th>
+	  <th>Done?</th>
+   </tr>
+   </thead>
+  <tbody>
+  	{{#each task}}
+    <tr>
+    	<td>{{this.info}}</td>
+    	<td>{{this.reward}}</td>
+		<form method="POST" action="/today">
+			<input type="hidden" name="info" value={{this.info}}>
+			<td><input type="submit" name="submit" class="btn btn-success" value="✓"></td>
+		</form>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+
+
+<a class="btn btn-primary" href="/overview" role="button">End Day</a>
+

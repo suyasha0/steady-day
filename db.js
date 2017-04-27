@@ -3,28 +3,35 @@ const passportLocalMongoose = require('passport-local-mongoose');
 
 const TaskSchema = new mongoose.Schema({
 	info: String,		//what the task is
-	timeStart: String,	//when the user plans to start it
-	timeEnd: String,	//when the user plans to end it
 	reward: String,		//what the user plans to treat self with
 	done: {type: Number, default: -1}      	//1 for done, -1 for not done
 });
 
+const RewardSchema = new mongoose.Schema({
+	info: String
+});
+
 //used for regular logins
 const UserSchema = new mongoose.Schema({
-	username: String,
-	hash: String,
-	tasks: [TaskSchema]
+	Id: String,
+	password: String,
+	tasks: [TaskSchema],
+	rewards: [RewardSchema]
 });
 
 //used for Facebook logins
 const FacebookUserSchema = new mongoose.Schema({
-	fbId: String,		//used to find old users and their existing tasks
-	tasks: [TaskSchema]
+	Id: String,
+	username: String,		
+	tasks: [TaskSchema],
+	rewards: [RewardSchema]
 });
 
 mongoose.model('User', UserSchema);
 mongoose.model('FbUser', FacebookUserSchema);
 mongoose.model('Task', TaskSchema);
+mongoose.model('Reward', RewardSchema);
+
 
 // is the environment variable, NODE_ENV, set to PRODUCTION? 
 if (process.env.NODE_ENV === 'PRODUCTION') {

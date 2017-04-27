@@ -1,15 +1,21 @@
 <br><h1>Plan</h1>
 
-<br>
-
-{{#each task}}
-	<br>
-	<b>{{this.info}}</b>
-	Reward: {{this.reward}}
-	</br>
-{{/each}}
-
-<script src="javascripts/reward.js"></script>
+<table class="table table-striped">
+   <thead>
+   <tr>
+	  <th></th>
+	  <th><i>Reward</i></th>
+   </tr>
+   </thead>
+  <tbody>
+  	{{#each task}}
+    <tr>
+		<td>{{this.info}}</td>
+		<td>{{this.reward}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
 
 <br>
 <form method="POST" action="/plan">
@@ -20,10 +26,42 @@
 	 <option value="starbucks">Starbucks</option>
   	 <option value="tea">Tea</option>
 	</select>
-    <input type="submit" value="Add Task">
+    <input type="submit" class="btn btn-info" value="Add Task">
+    <a class="btn btn-outline-primary" href="/reward" role="button">Manage Rewards</a>
 </form>
 </br>
 
-<button class="add" type="reward">Other</button>
-<br><i>Please note that the 'Other' button is not yet functional.</i></br>
+<a class="btn btn-primary" href="/today" role="button">Done</a>
+
 </br>
+
+
+<script>
+const form = document.querySelector('form');
+const re = /^[\w ]+$/;
+
+
+form.addEventListener("submit", function(evt){
+
+  if(!taskE() || !taskS()){
+      evt.preventDefault();
+  }
+  else{
+    return true;
+  }
+
+  function taskE(){
+    if(form.info.value === ""){
+      alert("Error: Info is empty!");
+      form.username.focus();
+    }
+  };
+
+  function taskS(){
+    if(!re.test(form.info.value)) {
+      alert("Error: Info contains invalid characters!");
+      form.username.focus();
+    }
+  };
+});
+</script>
