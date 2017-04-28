@@ -22,9 +22,15 @@
   	Info: <input type="text" name="info"> 
   	Reward: 
   	<select id="reward" name="reward">
-	 <option selected value="-">none</option>
-	 <option value="starbucks">Starbucks</option>
-  	 <option value="tea">Tea</option>
+	   <option selected value="-">none</option>
+	   <option value="Starbucks">Starbucks</option>
+  	 <option value="Boba">Boba</option>
+
+      {{#each rewards}}
+
+        <option values={{info}}>{{info}}</option value>
+      {{/each}}
+
 	</select>
     <input type="submit" class="btn btn-info" value="Add Task">
     <a class="btn btn-outline-primary" href="/reward" role="button">Manage Rewards</a>
@@ -36,32 +42,4 @@
 </br>
 
 
-<script>
-const form = document.querySelector('form');
-const re = /^[\w ]+$/;
-
-
-form.addEventListener("submit", function(evt){
-
-  if(!taskE() || !taskS()){
-      evt.preventDefault();
-  }
-  else{
-    return true;
-  }
-
-  function taskE(){
-    if(form.info.value === ""){
-      alert("Error: Info is empty!");
-      form.username.focus();
-    }
-  };
-
-  function taskS(){
-    if(!re.test(form.info.value)) {
-      alert("Error: Info contains invalid characters!");
-      form.username.focus();
-    }
-  };
-});
-</script>
+<script src="js/validateTask.js"></script>

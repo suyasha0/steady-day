@@ -1,21 +1,22 @@
-
 const form = document.querySelector('form');
 const re = /^[\w ]+$/;
 
 
 form.addEventListener("submit", function(evt){
 
-  if(taskE() || taskS()){
+  checkForm();
+  return true;
+
+  function checkForm(){
+    if(taskE() || taskS()){
       evt.preventDefault();
-  }
-  else{
-    return true;
-  }
+    }
+  };
 
   function taskE(){
     if(form.info.value === ""){
       alert("Error: Info is empty!");
-      form.username.focus();
+      form.info.focus();
       return true;
     }
   };
@@ -23,7 +24,7 @@ form.addEventListener("submit", function(evt){
   function taskS(){
     if(!re.test(form.info.value)) {
       alert("Error: Info contains invalid characters!");
-      form.username.focus();
+      form.info.focus();
       return true;
     }
   };

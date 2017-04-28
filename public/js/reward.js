@@ -1,43 +1,88 @@
  document.addEventListener('DOMContentLoaded', main);
 
  function main(){
+ 	const addBtn = document.getElementById('addBtn');
 	const btn = document.getElementById('filterBtn');
 	btn.addEventListener('click', handleClick);
-	const addBtn = document.getElementById('addBtn');
 	addBtn.addEventListener('click', handleAdd);
 };
 
+
 function handleAdd(evt){
+
 	evt.preventDefault();
-	const info = document.getElementById('rewardTitle').value;
+	const hi = validate();
 
-	const req = new XMLHttpRequest();
-	req.open('POST', '/api/rewards/create', true);
-	req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	if(hi){
+		const info = document.getElementById('rewardTitle').value;
 
-	req.addEventListener('load', handleAddLoad);
+		const req = new XMLHttpRequest();
+		req.open('POST', '/api/rewards/create', true);
+		req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-	req.send('info='+info);
-	
-	function handleAddLoad(){
-		if(req.status>=200 && req.status<400){
-			const msgs = JSON.parse(req.responseText);
-			const rewards = document.getElementById('reward-list');
+		req.addEventListener('load', handleAddLoad);
 
-			while (rewards.hasChildNodes()) {
-				rewards.removeChild(rewards.lastChild);
+		req.send('info='+info);
+
+		function handleAddLoad(){
+			if(req.status>=200 && req.status<400){
+				const msgs = JSON.parse(req.responseText);
+				const rewards = document.getElementById('reward-list');
+
+				while (rewards.hasChildNodes()) {
+					rewards.removeChild(rewards.lastChild);
+				}
+
+				msgs.forEach(function(obj){
+					rewards.appendChild(elt("tr", elt("td", obj.info + "")));			
+				});
 			}
+		}; 
 
-			msgs.forEach(function(obj){
-				rewards.appendChild(elt("tr", elt("td", obj.info + "")));			
-			});
-		}
-	}; 
+	}
+	
+	function validate(){
+		const re = /^[\w ]+$/;
+		const form = document.getElementById('create-form');
+
+
+	 	 if(!checkForm()){
+	 	 	return false;
+	 	 }
+	 	 return true;
+
+	  	function checkForm(){
+	   		if(rewE() || rewS()){
+	   	   		return false;
+	   		}
+	   		return true;
+	  	};
+
+	 	 function rewE(){
+	 	   	if(form.rewardTitle.value === ""){
+	   	   		alert("Error: Info is empty!");
+	   	   		form.rewardTitle.focus();
+	   		    return true;
+	   		 }
+	 	};
+
+
+	  	function rewS(){
+	    	if(!re.test(form.rewardTitle.value)) {
+	      		alert("Error: Info contains invalid characters!");
+	      		form.rewardTitle.focus();
+	      		return true;
+	    	}
+	  	}; 
+
+	};
+
 };
+
 
 function handleClick(evt){
 	evt.preventDefault();
-	const url = 'http://localhost:3000/api/rewards/'; 
+	const url = '/api/rewards/'; 
 	const params = "info="+ document.getElementById('reward').value;
 	
 	const req = new XMLHttpRequest();
