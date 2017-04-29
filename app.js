@@ -261,8 +261,6 @@ app.post('/today', (req, res) => {
 			return ele;
 		});
 
-		console.log(newTasks[0]);
-
 		for(let i=0; i<qTasks.length; i++){
 			qTasks[i] = newTasks[i];
 		}
