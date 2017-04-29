@@ -256,7 +256,7 @@ app.post('/today', (req, res) => {
 			return ele.info === req.body.info;
 		});
 
-		newTasks = qTasks.map(function(ele){
+		const newTasks = qTasks.map(function(ele){
 			ele.done = 1;
 			return ele;
 		});
