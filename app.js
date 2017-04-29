@@ -71,10 +71,11 @@ function isValidPassword(user, password){
 
 //======== Facebook login strategy ========
 
+
 const configAuth = {
         'clientID'      : '297047947405381',
         'clientSecret'  : '6685d6dfec32c5266e7af80bec462e48', 
-        'callbackURL'   : 'http://localhost:3000/auth/facebook/callback'
+        'callbackURL'   : 'http://linserv2.cims.nyu.edu:19074/auth/facebook/callback'
     };
 
 passport.use(new FacebookStrategy({
