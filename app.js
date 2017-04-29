@@ -257,8 +257,11 @@ app.post('/today', (req, res) => {
 		});
 
 		newTasks = qTasks.map(function(ele){
-			return ele.done = 1;
+			ele.done = 1;
+			return ele;
 		});
+
+		console.log(newTasks[0]);
 
 		for(let i=0; i<qTasks.length; i++){
 			qTasks[i] = newTasks[i];
