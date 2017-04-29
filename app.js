@@ -75,7 +75,7 @@ function isValidPassword(user, password){
 const configAuth = {
         'clientID'      : '297047947405381',
         'clientSecret'  : '6685d6dfec32c5266e7af80bec462e48', 
-        'callbackURL'   : 'http://linserv2.cims.nyu.edu:19074/auth/facebook/callback'
+        'callbackURL'   : '/auth/facebook/callback'
     };
 
 passport.use(new FacebookStrategy({
@@ -256,9 +256,13 @@ app.post('/today', (req, res) => {
 			return ele.info === req.body.info;
 		});
 
-		qTasks.map(function(ele){
+		newTasks = qTasks.map(function(ele){
 			return ele.done = 1;
 		});
+
+		for(let i=0; i<qTasks.length; i++){
+			qTasks[i] = newTasks[i];
+		}
 
 		user.save(function(saveErr, saveUser, saveCount){
 			if(saveErr){

@@ -4,6 +4,7 @@
   "description": "\u0016Steady Day is a web app that will allow users to plan out tasks for their day and set rewards for particular tasks.",
   "main": "app.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.1",
     "bootstrap": "^4.0.0-alpha.6",
     "chartist": "^0.10.1",
