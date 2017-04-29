@@ -19,16 +19,8 @@ const UserSchema = new mongoose.Schema({
 	rewards: [RewardSchema]
 });
 
-//used for Facebook logins
-const FacebookUserSchema = new mongoose.Schema({
-	Id: String,
-	username: String,		
-	tasks: [TaskSchema],
-	rewards: [RewardSchema]
-});
 
 mongoose.model('User', UserSchema);
-mongoose.model('FbUser', FacebookUserSchema);
 mongoose.model('Task', TaskSchema);
 mongoose.model('Reward', RewardSchema);
 

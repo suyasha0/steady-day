@@ -1,5 +1,15 @@
 <br><h1>Day Overview</h1></br>
 
+<div class="col-lg-6">
+
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+	<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
+	<div class="ct-chart ct-perfect-fourth"></div>
+	<script src="js/chart.js"></script> 
+
+</div>
+
 <div class="col-xs-6">
 	<table class="table table-striped">
 	   <thead>
@@ -11,7 +21,7 @@
 	   </thead>
 	  <tbody>
 	  	{{#each dTasks}}
-	    <tr>
+	    <tr class="done">
 			<td>{{this.info}}</td>
 	    </tr>
 	    {{/each}}
@@ -30,13 +40,11 @@
 	   </thead>
 	  <tbody>
 	  	{{#each nTasks}}
-	    <tr>
+	    <tr class="not">
 			<td>{{this.info}}</td>
 	    </tr>
 	    {{/each}}
 	  </tbody>
 	</table>
 </div>
-
-
 

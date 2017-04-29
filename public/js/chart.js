@@ -1,27 +1,28 @@
+document.addEventListener('DOMContentLoaded', main);
+
+
+const data = {
+  labels: [".", "TODO", "Completed"],
+  series: [0]
+}; 
+/*
 const data = {
   labels: ['Task1', 'Task2', 'Task3'],
   series: [20, 15, 40]
-};
+}; */
 
-const options = {
-  labelInterpolationFnc: function(value) {
-    return value[0]
-  }
-};
 
-const responsiveOptions = [
-  ['screen and (min-width: 640px)', {
-    chartPadding: 30,
-    labelOffset: 50,
-    labelDirection: 'explode',
-    labelInterpolationFnc: function(value) {
-      return value;
-    }
-  }],
-  ['screen and (min-width: 1024px)', {
-    labelOffset: 80,
-    chartPadding: 20
-  }]
-];
-
-new Chartist.Pie('.ct-chart', data, options, responsiveOptions);
+function main(){
+  const notElems = document.getElementsByClassName('not');
+  data.series.push(notElems.length);
+  const doneElems = document.getElementsByClassName('done');
+  const fraction = doneElems.length/(notElems.length+doneElems.length);
+  data.series.push(doneElems.length);
+  new Chartist.Pie('.ct-chart', data, {
+    donut: true,
+    donutWidth: 60,
+    donutSolid: true,
+    startAngle: 360*fraction,
+    showLabel: true
+  });
+}
