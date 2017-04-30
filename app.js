@@ -252,11 +252,11 @@ app.post('/today', isAuthenticated, (req, res) => {
 
 	User.findOne({Id: req.user.Id}, function(err, user, count){
 
-		const qTasks = user.tasks.filter(function(ele){
-			return ele.info === req.body.info;
+		user.tasks.forEach(function(ele){
+			if(ele.info === req.body.info){
+				ele.done = 1;
+			}
 		});
-
-		qTasks[0].done = 1;
 
 		user.save(function(saveErr, saveUser, saveCount){
 			if(saveErr){
