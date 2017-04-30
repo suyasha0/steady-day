@@ -20,9 +20,10 @@ An Example User:
 
 ```javascript
 {
-  username: "stressedstudent",
-  hash: // a password hash,
+  Id: "stressedstudent",
+  password: // a password hash,
   tasks: // an array of references to Task documents
+  rewards: // an array of references to Reward documents
 }
 ```
 
