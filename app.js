@@ -256,14 +256,7 @@ app.post('/today', (req, res) => {
 			return ele.info === req.body.info;
 		});
 
-		const newTasks = qTasks.map(function(ele){
-			ele.done = 1;
-			return ele;
-		});
-
-		for(let i=0; i<qTasks.length; i++){
-			qTasks[i] = newTasks[i];
-		}
+		qTasks[0].done = 1;
 
 		user.save(function(saveErr, saveUser, saveCount){
 			if(saveErr){
@@ -337,10 +330,20 @@ app.get('/overview', isAuthenticated, (req, res) => {
 		const nTasks = user.tasks.filter(function(ele){
 			return ele.done === -1;
 		});
+
+		const doneVals = [];
+
+		user.tasks.forEach(function(ele){
+			doneVals.push(ele.done);
+		});
+
+		const productivity = doneVals.reduce(function(accum, ele){
+			return accum + ele;
+		});
+
 		res.render('overview', {dTasks: dTasks, nTasks: nTasks, user: req.user});
 
 	});
-
 
 });
 
