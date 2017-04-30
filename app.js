@@ -248,7 +248,7 @@ app.get('/today', isAuthenticated, (req, res) => {
 	});
 });
 
-app.post('/today', (req, res) => {
+app.post('/today', isAuthenticated, (req, res) => {
 
 	User.findOne({Id: req.user.Id}, function(err, user, count){
 
