@@ -32,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/nyu-csci-ua-0480-008-spring-2017/ss8403-final-project/issues"
   },
+  "scripts":{
+    "start": "node app.js"
+  },
   "homepage": "https://github.com/nyu-csci-ua-0480-008-spring-2017/ss8403-final-project#readme"
 }
