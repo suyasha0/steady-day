@@ -4,7 +4,7 @@
 
 When massive amounts of work and pressure piles up on you, it can be hard to stay motivated. When faced with a neverending list of things-to-do, sometimes you may spend the day doing none of it at all! This is where Steady Day can help, by transforming your day into a steady and *rewarding* one using the power of short-term motivation.
 
-Steady Day is a web app that will allow users to plan out tasks for their day and set rewards for particular tasks. Once users log in, they can plan our their day or, if they already made a plan previously, view their most recent plan. On the plan page, users can mark tasks as done and its corresponding reward will show up. Users can choose "End Day" at the end of the day and an overview of their day including the tasks they accomplished and the time spent on each task will show up. 
+Steady Day is a web app that will allow users to plan out tasks for their day and set rewards for particular tasks. Once users log in, they can plan out their day or, if they already made a plan previously, view their most recent plan. On the plan page, users can mark tasks as done and its corresponding reward will show up. Users can choose "End Day" at the end of the day and an overview of their day including the tasks they accomplished and the time spent on each task will show up. 
 
 
 ## Data Model
